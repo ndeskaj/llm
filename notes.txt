@@ -1,0 +1,76 @@
+Understanding LLMs
+- - - - - - - - - - - - 
+
+Encoder module processes input and encodes it into a series
+of numerical representations or vectors, that capture the 
+contextual information of the input. Decoder takes the encoded
+vectors and generates the output. Decoder takes also partial
+outputs as input.
+
+Self-attention mechanism: Allows the model to weigh the importance
+of different parts of the input sequence when generating the output.
+
+Most GPTs are autoregressive and therefore only use their previous
+outputs as input for predictions. Hence, only decoder modules are
+used.
+
+Emergent behavior: Model learns to perform tasks it wasn't
+explicitly trained for. Natural consequence of the models exposure
+to large amounts of multilingual data in different domains.
+
+Stages of coding an LLM
+- - - - - - - - - - - - - - 
+
+STAGE 1:
+Data processing and code attention mechanisms
+
+STAGE 2:
+Pre-training the model on unlabeled data to get 
+a foundation model
+
+STAGE 3:
+Fine-tuning the model on specific tasks
+
+
+-------------------------------------------------
+
+Working with text data
+- - - - - - - - - - - - - -
+
+Embedding: Converting data into numerical vector format. Different
+data types require different embedding models/methods. Embedding is
+mapping from discrete data to a continuous vector space. 
+
+Retrieval-augmented generation (RAG): Generation (like producing text)
+with retirieval (like searching for information in an external database) to pull
+relevant information for the generation.
+
+Word2Vec example: Main idea is that words, that are used in similar context
+tend to have similar meanings.
+
+Tokenizing text: Splitting text into smaller units (tokens).
+
+We will use "The Vedrict" as text to tokenize https://en.wikisource.org/wiki/The_Verdict
+Commonly used for processing are millions of articles and books.
+
+Text will be tokenized and tokens will get token IDs-> tokenization.ipynb
+For mapping we need to create a vocabulary, which define show we map each unique
+word and special character to a unique integer.
+
+Create a list of all unique tokens and sort them alphabetically (remove duplicates).
+
+When wanting to convert outputs of LLM from numbers back into text, we create
+an inverse version of the vocabulary. 
+--> Create Tokenizer Class that encodes (split text into tokens and map) and decodes
+(integer-to-string mapping) 
+
+
+
+
+
+
+
+
+
+
+
